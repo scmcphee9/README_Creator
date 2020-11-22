@@ -1,5 +1,4 @@
-// function to generate markdown for README
-
+// this function creates a badge, and if there is no badge, no badge is created
 function licenseBadge(license) {
   if (license !== "None") {
     return `![GitHub license](https://img.shields.io/badge/license-${license}-blue.svg)`;
@@ -7,6 +6,7 @@ function licenseBadge(license) {
   return "";
 }
 
+// this function creates table of contents link if there is a license
 function licenseLink(license) {
   if (license !== "None") {
     return `- [License](#license)`;
@@ -14,6 +14,7 @@ function licenseLink(license) {
   return "";
 }
 
+// this function creates the license section if there is a license
 function licenseSection(license) {
   if (license !== "None") {
     return `## License
@@ -22,6 +23,7 @@ This project requires the ${license} license.`;
   return "";
 }
 
+// function to generate markdown for README
 function generateMarkdown(data) {
   return `
 # ${data.title} ${licenseBadge(data.license)}
@@ -62,8 +64,6 @@ ${data.tests}
 Contact me by GitHub or Email:
 - GitHub username: [${data.username}](https://github.com/${data.username})
 - Email Address: ${data.email}
-
-
 `;
 }
 
